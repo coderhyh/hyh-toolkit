@@ -1,15 +1,15 @@
 {
-  "name": "hyh-tools",
+  "name": "hyh-toolkit",
   "version": "0.0.5",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/coderhyh/hyh-tools",
+  "homepage": "https://github.com/coderhyh/hyh-toolkit",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderhyh/hyh-tools"
+    "url": "git+https://github.com/coderhyh/hyh-toolkit"
   },
-  "bugs": "https://github.com/coderhyh/hyh-tools/issues",
+  "bugs": "https://github.com/coderhyh/hyh-toolkit/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {

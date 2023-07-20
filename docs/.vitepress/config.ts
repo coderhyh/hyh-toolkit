@@ -8,7 +8,7 @@ import sidebar from './sidebar';
 export default defineConfig({
   title: ' ',
   description: 'tools',
-  base: '/hyh-tools/',
+  base: '/hyh-toolkit/',
   lastUpdated: true,
   themeConfig: {
     logo: '/logo.svg',
@@ -17,7 +17,7 @@ export default defineConfig({
 
     sidebar,
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-tools' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-toolkit' }]
   },
   vite: {
     plugins: [pagefindPlugin({

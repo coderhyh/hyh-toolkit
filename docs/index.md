@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: 'hyh-tools'
+  name: 'hyh-toolkit'
   tagline: My great project tagline
   actions:
     - theme: brand
