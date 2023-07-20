@@ -41,7 +41,7 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts src/ --fix",
-    "commit": "cz",
+    "commit": "git add . && cz",
     "prepare": "husky install",
     "prettier": "prettier --write .",
     "docs:dev": "vitepress dev docs",
