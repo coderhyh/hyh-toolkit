@@ -1,7 +1,7 @@
 {
   "name": "hyh-tools",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -37,7 +37,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch src",
-    "release": "bump && publish",
+    "testt": "bump --tag 'v%s tag' --push",
     "start": "ts-node src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
