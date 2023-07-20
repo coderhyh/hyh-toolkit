@@ -12,6 +12,7 @@ dist
 bin
 cli
 dist-ssr
+docs/.vitepress/cache
 *.local
 
 # Editor directories and files
