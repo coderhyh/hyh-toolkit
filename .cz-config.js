@@ -17,7 +17,7 @@ module.exports = {
     },
     { value: 'merge', name: 'merge: 仅进行分支合并' },
     { value: 'revert', name: 'revert: 回滚到上一个版本' },
-    { value: 'version', name: 'version: 变更版本' }
+    { value: 'release', name: 'version: 变更版本' }
   ],
   scopes: [],
   allowTicketNumber: false,
