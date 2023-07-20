@@ -1,6 +1,6 @@
 {
   "name": "hyh-tools",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -36,7 +36,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch src",
-    "publish": "bump --tag --push",
+    "publish": "bump --tag --commit \"version: v%s\" --push",
     "start": "ts-node src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",

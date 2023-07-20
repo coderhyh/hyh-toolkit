@@ -16,7 +16,8 @@ module.exports = {
       name: 'improvement: 用于对当前实现进行改进而没有添加新功能或修复错误的提交'
     },
     { value: 'merge', name: 'merge: 仅进行分支合并' },
-    { value: 'revert', name: 'revert: 回滚到上一个版本' }
+    { value: 'revert', name: 'revert: 回滚到上一个版本' },
+    { value: 'version', name: 'version: 变更版本' }
   ],
   scopes: [],
   allowTicketNumber: false,
