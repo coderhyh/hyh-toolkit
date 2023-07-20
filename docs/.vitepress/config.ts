@@ -1,27 +1,35 @@
 import { defineConfig } from 'vitepress'
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+
+import nav from './nav';
+import sidebar from './sidebar';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'hyh-tools',
+  title: ' ',
   description: 'tools',
   base: '/hyh-tools/',
+  lastUpdated: true,
   themeConfig: {
+    logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    nav,
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
+    sidebar,
+
+    socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-tools' }]
+  },
+  vite: {
+    plugins: [pagefindPlugin({
+      resultOptimization: false,
+      filter(searchItem) {
+        return !searchItem.route.includes('404')
+      },
+      customSearchQuery(input) {
+        return input.replace(/[\u4e00-\u9fa5]/g, ' $& ')
+          .replace(/\s+/g, ' ')
+          .trim();
       }
-    ],
-
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
-  }
+    })],
+  },
 })

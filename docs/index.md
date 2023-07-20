@@ -4,12 +4,11 @@ layout: home
 
 hero:
   name: 'hyh-tools'
-  text: 'tools'
   tagline: My great project tagline
   actions:
     - theme: brand
       text: Markdown Examples
-      link: /markdown-examples
+      link: /guide
     - theme: alt
       text: API Examples
       link: /api-examples
