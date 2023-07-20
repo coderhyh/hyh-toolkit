@@ -1,0 +1,71 @@
+{
+  "name": "hyh-tools",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "tools",
+  "author": "coderhyh Fu <coderhyh@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/coderhyh/hyh-tools",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderhyh/hyh-tools"
+  },
+  "bugs": "https://github.com/coderhyh/hyh-tools/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch src",
+    "release": "bump && publish",
+    "start": "ts-node src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --ext .js,.ts src/ --fix",
+    "prettier": "prettier --write .",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@jsdevtools/version-bump-prompt": "^6.1.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "chokidar": "^3.5.3",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "ts-loader": "^9.4.1",
+    "tsup": "^7.1.0",
+    "typescript": "^4.8.4",
+    "vite": "^4.4.4",
+    "vitepress": "1.0.0-beta.5",
+    "vitest": "^0.33.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
