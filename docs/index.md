@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "hyh-tools"
-  text: "tools"
+  name: 'hyh-tools'
+  text: 'tools'
   tagline: My great project tagline
   actions:
     - theme: brand
@@ -16,10 +16,9 @@ hero:
 
 features:
   - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit hhh
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
