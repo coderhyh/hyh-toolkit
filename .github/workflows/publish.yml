@@ -1,4 +1,4 @@
-name: Publish Package to npmjs
+name: Publish Package To Npmjs
 
 on:
   push:
@@ -14,8 +14,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.email "272970666@qq.com"
-          git config user.name "allen"
+          git config user.email "772567615@qq.com"
+          git config user.name "coderhyh"
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
