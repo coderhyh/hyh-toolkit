@@ -15,18 +15,27 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
+      "require": "./dist/index.js",
       "import": "./dist/index.mjs"
+    },
+    "./vite-plugin": {
+      "types": "./dist/vite-plugin.d.ts",
+      "require": "./dist/vite-plugin.js",
+      "import": "./dist/vite-plugin.mjs"
+    },
+    "./resolve": {
+      "types": "./dist/resolve.d.ts",
+      "require": "./dist/resolve.js",
+      "import": "./dist/resolve.mjs"
     }
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "index.d.ts",
   "typesVersions": {
     "*": {
       "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
+        "./dist/*"
       ]
     }
   },
@@ -68,10 +77,12 @@
     "ts-loader": "^9.4.1",
     "tsup": "^7.1.0",
     "typescript": "^4.8.4",
+    "unplugin-auto-import": "^0.16.6",
     "vite": "^4.4.4",
     "vitepress": "1.0.0-beta.5",
     "vitepress-plugin-pagefind": "^0.2.4",
-    "vitest": "^0.33.0"
+    "vitest": "^0.33.0",
+    "vue": "^3.3.4"
   },
   "engines": {
     "node": ">=16.0.0"

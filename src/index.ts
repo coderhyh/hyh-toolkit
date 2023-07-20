@@ -1,3 +1,1 @@
-import PiniaAutoRefs from './pinia-auto-refs'
-
-export { PiniaAutoRefs }
+export * from './hooks/useVModel'
