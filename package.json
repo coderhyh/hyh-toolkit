@@ -1,6 +1,5 @@
 {
   "name": "hyh-tools",
-  "type": "module",
   "version": "0.0.4",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
@@ -42,16 +41,24 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts src/ --fix",
+    "commit": "cz",
+    "prepare": "husky install",
     "prettier": "prettier --write .",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "init": "pnpm i && git init && pnpm run prepare && git add . && git commit -m 'init'"
   },
   "devDependencies": {
     "@jsdevtools/version-bump-prompt": "^6.1.0",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "commitizen": "4.2.4",
+    "cz-customizable": "6.3.0",
+    "husky": "^8.0.0",
     "chokidar": "^3.5.3",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
