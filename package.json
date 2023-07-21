@@ -1,16 +1,21 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/coderhyh/hyh-toolkit",
+  "homepage": "https://coderhyh.github.io/hyh-toolkit",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderhyh/hyh-toolkit"
   },
   "bugs": "https://github.com/coderhyh/hyh-toolkit/issues",
-  "keywords": [],
+  "keywords": [
+    "tool",
+    "toolkit",
+    "hook",
+    "vitePlugin"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -43,7 +48,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup-node",
     "dev": "tsup --watch src",
     "release": "bump --tag --commit \"release: v%s\" --push",
     "start": "ts-node src/index.ts",
@@ -65,7 +70,6 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
-    "chokidar": "^3.5.3",
     "commitizen": "4.2.4",
     "cz-customizable": "6.3.0",
     "eslint": "^8.37.0",
@@ -81,10 +85,12 @@
     "vite": "^4.4.4",
     "vitepress": "1.0.0-beta.5",
     "vitepress-plugin-pagefind": "^0.2.4",
-    "vitest": "^0.33.0",
-    "vue": "^3.3.4"
+    "chokidar": "^3.5.3",
+    "vue": "^3.3.4",
+    "vitest": "^0.33.0"
   },
   "engines": {
     "node": ">=16.0.0"
-  }
+  },
+  "dependencies": {}
 }

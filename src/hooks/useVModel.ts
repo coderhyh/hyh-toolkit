@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { computed } from 'vue'
-
 export const useVModel = <T extends Readonly<{ [k: string]: any }>, K extends keyof T>(
   props: T,
   key: K,
@@ -8,12 +6,15 @@ export const useVModel = <T extends Readonly<{ [k: string]: any }>, K extends ke
 ) => {
   return computed({
     get() {
-      return new Proxy(props[key], {
-        set(obj, name, val) {
-          emit(`update:${String(key)}`, { ...obj, [name]: val })
-          return true
-        }
-      })
+      if (typeof props[key] === 'object') {
+        return new Proxy(props[key], {
+          set(obj, name, val) {
+            emit(`update:${String(key)}`, { ...obj, [name]: val })
+            return true
+          }
+        })
+      }
+      return props[key]
     },
     set(val) {
       emit(`update:${String(key)}`, val)
