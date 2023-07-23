@@ -44,8 +44,9 @@ export default function (options: Options = {}) {
     fs.writeFile(filepath, JSON.stringify(eslintConfigs, null, 2), 'utf-8')
   }
   const setupWatcher = (watcher: FSWatcher) => {
-    watcher.on('unlink', generateConfigFiles)
-    watcher.on('add', generateConfigFiles)
+    // watcher.on('unlink', generateConfigFiles)
+    // watcher.on('add', generateConfigFiles)
+    watcher.on('change', generateConfigFiles)
   }
 
   return {

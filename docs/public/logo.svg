@@ -5,11 +5,10 @@
   <def>
     <style> 
       .p {
-        fill: none;
         animation: stroke 10s ease forwards infinite;
         transform-origin: center;
         stroke: #10b981;
-        /* stroke-width: 3; */
+        stroke-width: 1;
         stroke-dashoffset: 1px;
         stroke-dasharray: 350px 0;
         animation-delay: 0s;
