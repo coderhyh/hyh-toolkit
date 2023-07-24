@@ -4,20 +4,27 @@ layout: home
 
 hero:
   name: 'hyh-toolkit'
-  tagline: My great project tagline
+  tagline: 一个轻量且实用的工具库
+  image:
+    src: /logo.svg
+    alt: hyh-toolkit
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: 开始
       link: /guide
     - theme: alt
-      text: API Examples
-      link: /api-examples
-
+      text: 在Gayhub上查看
+      link: https://github.com/coderhyh/hyh-toolkit
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon:
+      src: /vue-icon.svg
+    title: VUE HOOK
+    details: 实用的vue hook
+  - icon:
+      src: /vite-icon.svg
+    title: VITE PLUGIN
+    details: 方便开发的vite插件
+  - icon: 🔧
+    title: UTILS
+    details: 好用的工具函数
 ---

@@ -1,6 +1,6 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -86,12 +86,11 @@
     "vitepress": "1.0.0-beta.5",
     "vitepress-plugin-pagefind": "^0.2.4",
     "vue": "^3.3.4",
-    "vitest": "^0.33.0"
+    "vitest": "^0.33.0",
+    "chokidar": "^3.5.3"
   },
   "engines": {
     "node": ">=16.0.0"
   },
-  "dependencies": {
-    "chokidar": "^3.5.3"
-  }
+  "dependencies": {}
 }

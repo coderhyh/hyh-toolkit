@@ -8,9 +8,15 @@ export default <DefaultTheme.Sidebar>[
     ]
   },
   {
-    text: 'Tools',
+    text: 'Vue Hooks',
     items: [
-      { text: 'pinia-auto-refs', link: '/tools/pinia-auto-refs' },
+      { text: 'useVModel', link: '/vue-hooks/useVModel' },
+    ]
+  },
+  {
+    text: 'Vite Plugin',
+    items: [
+      { text: 'pinia-auto-refs', link: '/vite-plugin/pinia-auto-refs' },
     ]
   },
 ]

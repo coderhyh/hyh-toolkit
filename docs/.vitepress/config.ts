@@ -14,10 +14,13 @@ export default defineConfig({
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav,
-
     sidebar,
-
-    socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-toolkit' }]
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/coderhyh/hyh-toolkit' },
+    ]
+  },
+  markdown: {
+    lineNumbers: true
   },
   vite: {
     plugins: [pagefindPlugin({
