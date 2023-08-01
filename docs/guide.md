@@ -3,11 +3,11 @@ sidebar: 'auto'
 ---
 
 <div style="display: flex">
-<h1>hyh-toolkit</h1>
+  <h1>hyh-toolkit</h1>
 
-<a href="https://www.npmjs.com/package/hyh-toolkit" style="margin-left: 10px">
-  <img src="https://img.shields.io/npm/v/hyh-toolkit.svg" alt="npm package">
-</a>
+  <a href="https://www.npmjs.com/package/hyh-toolkit" target="_blank" style="margin-left: 10px">
+    <img src="https://img.shields.io/npm/v/hyh-toolkit.svg" alt="npm package">
+  </a>
 </div>
 
 hyh-toolkit 是一个多功能工具库，集成了 Vite Plugin、Vue Hook、实用工具等，为开发提供便利。
