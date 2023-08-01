@@ -4,7 +4,10 @@
   </a>
   <br/><br/>
   <a href="https://www.npmjs.com/package/hyh-toolkit" target="_blank" style="margin-left: 10px">
-    <img src="https://img.shields.io/npm/v/hyh-toolkit.svg" alt="npm package">
+    <img src="https://img.shields.io/npm/v/hyh-toolkit.svg?logo=npm" alt="npm package">
+  </a>
+  <a href="https://github.com/coderhyh/hyh-toolkit/blob/master/LICENSE" target="_blank">
+    <img src="https://img.shields.io/github/license/coderhyh/hyh-toolkit" alt="LICENSE">
   </a>
 </p>
 
@@ -40,7 +43,7 @@ import { useVModel } from 'hyh-toolkit'
 
 #### Vite
 
-```ts {2,8}
+```ts
 import AutoImport from 'unplugin-auto-import/vite'
 import { HyhToolkitResolvers } from 'hyh-toolkit/resolvers'
 
@@ -56,7 +59,7 @@ export default defineConfig({
 
 #### Webpack
 
-```js{1,7}
+```js
 const { HyhToolkitResolvers } = require('hyh-toolkit/resolvers')
 module.exports = {
   /* ... */
@@ -73,6 +76,4 @@ module.exports = {
 
 ## 🧩 兼容
 
-::: warning
 暂不支持 vue2
-:::
