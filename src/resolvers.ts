@@ -2,7 +2,7 @@ import { ResolverResultObject } from 'unplugin-auto-import/types'
 
 import * as hooks from './index'
 
-export const HyhToolkitResolve = () =>
+export const HyhToolkitResolvers = () =>
   <ResolverResultObject>{
     type: 'component',
     resolve: (name: keyof typeof hooks) => {
