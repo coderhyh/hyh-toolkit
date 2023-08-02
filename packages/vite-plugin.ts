@@ -1,5 +1,3 @@
-import AutoImportType from './vite-plugin/auto-import-type'
-import AutoUpdatePages from './vite-plugin/auto-update-pages'
-import PiniaAutoRefs from './vite-plugin/pinia-auto-refs'
-
-export { AutoImportType, AutoUpdatePages, PiniaAutoRefs }
+export * from './vite-plugin/auto-import-type'
+export * from './vite-plugin/auto-update-pages'
+export * from './vite-plugin/pinia-auto-refs'

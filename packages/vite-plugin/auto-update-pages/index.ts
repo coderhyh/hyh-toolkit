@@ -14,7 +14,7 @@ const config: IConfig = {
   pagesJSONPath: './src/pages.json'
 }
 
-export const autoUpdatePages = (_config?: Partial<IConfig>) => {
+export const AutoUpdatePages = (_config?: Partial<IConfig>) => {
   const pagePath = _config?.pagePath || config.pagePath
   const pagesJSONPath = _config?.pagesJSONPath || config.pagesJSONPath
   const getPagesJSON = () => {
@@ -46,4 +46,4 @@ export const autoUpdatePages = (_config?: Partial<IConfig>) => {
   }
 }
 
-export default autoUpdatePages
+export default AutoUpdatePages

@@ -22,7 +22,7 @@ const defaultOptions = {
   globalsPropValue: true
 }
 
-export default function (options: Options = {}) {
+export const AutoImportType = (options: Options = {}) => {
   options = { ...defaultOptions, ...options }
 
   const { dtsDir, filepath, globalsPropValue } = options as Required<Options>
@@ -58,3 +58,5 @@ export default function (options: Options = {}) {
     }
   }
 }
+
+export default AutoImportType

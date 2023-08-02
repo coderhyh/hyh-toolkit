@@ -18,7 +18,7 @@ const defaultOptions: Options = {
   pathAlias: '~'
 }
 
-export default function (options: Options = {}) {
+export const PiniaAutoRefs = (options: Options = {}) => {
   options = { ...defaultOptions, ...options }
 
   const { storeDir, excludes, outputFile, pathAlias } = options as Required<Options>
@@ -76,3 +76,5 @@ export function useStore<T extends keyof typeof storeExports>(storeName: T) {
     }
   }
 }
+
+export default PiniaAutoRefs
