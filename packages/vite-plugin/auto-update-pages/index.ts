@@ -1,7 +1,8 @@
+import fs from 'node:fs'
+import path from 'node:path'
+
 import chokidar from 'chokidar'
-import fs from 'fs'
-import path from 'path'
-import { ResolvedConfig } from 'vite'
+import type { ResolvedConfig } from 'vite'
 
 interface IConfig {
   pagePath: string

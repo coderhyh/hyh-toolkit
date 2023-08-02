@@ -18,7 +18,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
   },
-  "include": ["src/**/*", "test/**/*"],
+  "include": ["packages/**/*"],
+  // "include": ["packages/**/*.ts", "packages/**/*.d.ts", "packages/**/*.tsx", "packages/**/*.vue"],
+  // "exclude": ["packages/**/__tests__/**", "packages/**/*.spec.ts", "packages/**/*.spec.tsx"],
   "ts-node": {
     "files": true
   }

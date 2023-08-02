@@ -1,7 +1,8 @@
+import fs from 'node:fs'
+import path from 'node:path'
+
 import chokidar from 'chokidar'
-import { FSWatcher, promises as fs } from 'fs'
-import { resolve } from 'path'
-import { ResolvedConfig } from 'vite'
+import type { ResolvedConfig } from 'vite'
 
 type Options = Partial<{
   storeDir: string
@@ -21,12 +22,12 @@ export default function (options: Options = {}) {
   options = { ...defaultOptions, ...options }
 
   const { storeDir, excludes, outputFile, pathAlias } = options as Required<Options>
-  const storePath = resolve(process.cwd(), storeDir)
+  const storePath = path.resolve(process.cwd(), storeDir)
   const outputDir = outputFile.replace(/(\/[^/]*).ts/, '')
-  fs.readdir(outputDir).catch(() => fs.mkdir(outputDir))
+  fs.promises.readdir(outputDir).catch(() => fs.promises.mkdir(outputDir))
 
   async function generateConfigFiles() {
-    const storesPath = await fs.readdir(storePath)
+    const storesPath = await fs.promises.readdir(storePath)
     const storeNames = storesPath
       .filter((i) => i.endsWith('.ts'))
       .map((i) => i.replace('.ts', ''))
@@ -59,10 +60,10 @@ export function useStore<T extends keyof typeof storeExports>(storeName: T) {
   return { ...store, ...storeRefs } as unknown as AutoToRefs<ReturnType<typeof storeExports[T]>>
 }
 `
-    fs.writeFile(outputFile, ctx, 'utf-8')
+    fs.promises.writeFile(outputFile, ctx, 'utf-8')
   }
 
-  const setupWatcher = (watcher: FSWatcher) => {
+  const setupWatcher = (watcher: fs.FSWatcher) => {
     watcher.on('unlink', generateConfigFiles)
     watcher.on('add', generateConfigFiles)
   }

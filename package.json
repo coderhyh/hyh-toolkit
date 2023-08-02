@@ -19,24 +19,25 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "types": "./es/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./es/index.mjs"
     },
     "./vite-plugin": {
-      "types": "./dist/vite-plugin.d.ts",
-      "require": "./dist/vite-plugin.js",
-      "import": "./dist/vite-plugin.mjs"
+      "types": "./es/vite-plugin.d.ts",
+      "require": "./lib/vite-plugin.js",
+      "import": "./es/vite-plugin.mjs"
     },
-    "./resolve": {
-      "types": "./dist/resolve.d.ts",
-      "require": "./dist/resolve.js",
-      "import": "./dist/resolve.mjs"
+    "./resolvers": {
+      "types": "./es/resolvers.d.ts",
+      "require": "./lib/resolvers.js",
+      "import": "./es/resolvers.mjs"
     }
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "index.d.ts",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
+  "unpkg": "dist/index.es.js",
   "typesVersions": {
     "*": {
       "*": [
@@ -45,22 +46,24 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "lib",
+    "es",
+    "LICENSE"
   ],
   "scripts": {
-    "build": "tsup-node",
-    "dev": "tsup --watch src",
+    "build": "npm run clean && vue-tsc --noEmit && vite build",
+    "clean": "rimraf dist lib es types",
     "release": "bump --tag --commit \"release: v%s\" --push",
-    "start": "ts-node src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint --ext .js,.ts src/ --fix",
+    "lint": "eslint --ext .js,.ts packages/ --fix",
     "commit": "git add . && cz",
     "prepare": "husky install",
     "prettier": "prettier --write .",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
+    "docs:dev": "vitepress dev packages",
+    "docs:build": "vitepress build packages",
+    "docs:preview": "vitepress preview packages",
     "init": "pnpm i && git init && pnpm run prepare && git add . && git commit -m 'init'"
   },
   "devDependencies": {
@@ -75,18 +78,20 @@
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.0",
+    "rimraf": "^5.0.1",
     "ts-loader": "^9.4.1",
-    "tsup": "^7.1.0",
     "typescript": "^4.8.4",
     "unplugin-auto-import": "^0.16.6",
     "vite": "^4.4.4",
+    "vite-plugin-build": "^0.10.0",
     "vitepress": "1.0.0-beta.5",
     "vitepress-plugin-pagefind": "^0.2.4",
+    "vitest": "^0.33.0",
     "vue": "^3.3.4",
-    "vitest": "^0.33.0"
+    "vue-tsc": "^1.8.8"
   },
   "engines": {
     "node": ">=16.0.0"

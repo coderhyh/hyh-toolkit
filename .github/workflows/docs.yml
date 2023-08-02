@@ -5,7 +5,9 @@ on:
     branches:
       - master
     paths:
-      - 'docs/**'
+      - 'packages/**/*.md'
+      - 'packages/.vitepress/**'
+      - 'packages/public/**'
 
 jobs:
   docs:
@@ -32,4 +34,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           branch: pages
-          folder: docs/.vitepress/dist
+          folder: packages/.vitepress/dist
