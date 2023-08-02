@@ -18,46 +18,10 @@ export default defineConfig({
               output: { globals: { vue: 'vue', chokidar: 'chokidar' } }
             },
             lib: {
-              formats: ['es', 'cjs', 'iife'],
+              formats: ['es', 'cjs'],
               entry: path.resolve(__dirname, 'packages/index.ts'),
               name: 'hyh_toolkit',
               fileName: (format) => `index.${format}.js`
-            }
-          },
-          {
-            rollupOptions: {
-              external: ['vue'],
-              output: { globals: { vue: 'vue' } }
-            },
-            lib: {
-              formats: ['es', 'cjs', 'iife'],
-              entry: path.resolve(__dirname, 'packages/vue-hooks.ts'),
-              name: 'hyh_toolkit_vue_hooks',
-              fileName: (format) => `vue-hooks.${format}.js`
-            }
-          },
-          {
-            rollupOptions: {
-              external: ['chokidar'],
-              output: { globals: { chokidar: 'chokidar' } }
-            },
-            lib: {
-              formats: ['es', 'cjs', 'iife'],
-              entry: path.resolve(__dirname, 'packages/vite-plugin.ts'),
-              name: 'hyh_toolkit_vite_plugin',
-              fileName: (format) => `vite-plugin.${format}.js`
-            }
-          },
-          {
-            rollupOptions: {
-              external: ['vue', 'chokidar'],
-              output: { globals: { vue: 'vue', chokidar: 'chokidar' } }
-            },
-            lib: {
-              formats: ['es', 'cjs', 'iife'],
-              entry: path.resolve(__dirname, 'packages/resolvers.ts'),
-              name: 'hyh_toolkit_resolvers',
-              fileName: (format) => `resolvers.${format}.js`
             }
           }
         ]
