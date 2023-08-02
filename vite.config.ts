@@ -50,8 +50,8 @@ export default defineConfig({
           },
           {
             rollupOptions: {
-              external: ['vue'],
-              output: { globals: { vue: 'vue' } }
+              external: ['vue', 'chokidar'],
+              output: { globals: { vue: 'vue', chokidar: 'chokidar' } }
             },
             lib: {
               formats: ['es', 'cjs', 'iife'],
