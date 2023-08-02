@@ -1,6 +1,6 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -16,8 +16,7 @@
   "files": [
     "dist",
     "lib",
-    "es",
-    "LICENSE"
+    "es"
   ],
   "sideEffects": [
     "dist/*"
@@ -38,12 +37,20 @@
       "require": "./lib/index.js"
     },
     "./es": {
-      "types": "./es/vue-hooks.d.ts",
-      "import": "./es/vue-hooks/index.js"
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js"
     },
     "./lib": {
-      "types": "./lib/vue-hooks/index.d.ts",
-      "require": "./lib/vue-hooks/index.js"
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./es/vite-plugin": {
+      "types": "./es/vite-plugin.d.ts",
+      "import": "./es/vite-plugin.js"
+    },
+    "./lib/vite-plugin": {
+      "types": "./lib/vite-plugin.d.ts",
+      "require": "./lib/vite-plugin.js"
     },
     "./*": "./*"
   },

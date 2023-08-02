@@ -1,7 +1,6 @@
-import fs from 'node:fs'
-import path from 'node:path'
-
 import chokidar from 'chokidar'
+import fs from 'fs'
+import path from 'path'
 import type { ResolvedConfig } from 'vite'
 
 interface IConfig {
@@ -45,5 +44,3 @@ export const AutoUpdatePages = (_config?: Partial<IConfig>) => {
     }
   }
 }
-
-export default AutoUpdatePages

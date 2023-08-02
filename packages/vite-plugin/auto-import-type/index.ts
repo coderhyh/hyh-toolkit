@@ -1,7 +1,6 @@
-import fs from 'node:fs'
-import path from 'node:path'
-
 import chokidar from 'chokidar'
+import fs from 'fs'
+import path from 'path'
 import type { ResolvedConfig } from 'vite'
 
 type ESLintGlobalsPropValue = boolean | 'readonly' | 'readable' | 'writable' | 'writeable'
@@ -58,5 +57,3 @@ export const AutoImportType = (options: Options = {}) => {
     }
   }
 }
-
-export default AutoImportType

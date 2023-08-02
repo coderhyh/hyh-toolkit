@@ -1,7 +1,6 @@
-import fs from 'node:fs'
-import path from 'node:path'
-
 import chokidar from 'chokidar'
+import fs from 'fs'
+import path from 'path'
 import type { ResolvedConfig } from 'vite'
 
 type Options = Partial<{
@@ -76,5 +75,3 @@ export function useStore<T extends keyof typeof storeExports>(storeName: T) {
     }
   }
 }
-
-export default PiniaAutoRefs
