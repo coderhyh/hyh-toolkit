@@ -14,14 +14,26 @@ export default defineConfig({
         buildOptions: [
           {
             rollupOptions: {
+              external: ['vue', 'chokidar'],
+              output: { globals: { vue: 'vue', chokidar: 'chokidar' } }
+            },
+            lib: {
+              formats: ['es', 'cjs', 'iife'],
+              entry: path.resolve(__dirname, 'packages/index.ts'),
+              name: 'hyh_toolkit',
+              fileName: (format) => `index.${format}.js`
+            }
+          },
+          {
+            rollupOptions: {
               external: ['vue'],
               output: { globals: { vue: 'vue' } }
             },
             lib: {
               formats: ['es', 'cjs', 'iife'],
-              entry: path.resolve(__dirname, 'packages/vue-hooks/index.ts'),
-              name: 'hyh_toolkit',
-              fileName: (format) => `index.${format}.js`
+              entry: path.resolve(__dirname, 'packages/vue-hooks.ts'),
+              name: 'hyh_toolkit_vue_hooks',
+              fileName: (format) => `vue-hooks.${format}.js`
             }
           },
           {
@@ -31,7 +43,7 @@ export default defineConfig({
             },
             lib: {
               formats: ['es', 'cjs', 'iife'],
-              entry: path.resolve(__dirname, 'packages/vite-plugin/index.ts'),
+              entry: path.resolve(__dirname, 'packages/vite-plugin.ts'),
               name: 'hyh_toolkit_vite_plugin',
               fileName: (format) => `vite-plugin.${format}.js`
             }

@@ -34,6 +34,12 @@ npm i hyh-toolkit -D
 import { useVModel } from 'hyh-toolkit'
 ```
 
+### 按需引入
+
+```ts
+import { useVModel } from 'hyh-toolkit/es/vue-hooks/useVModel'
+```
+
 ### 自动引入
 
 > 使用 [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import#readme) 的 resolver

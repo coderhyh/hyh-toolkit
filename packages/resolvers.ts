@@ -1,12 +1,12 @@
 import type { ResolverResultObject } from 'unplugin-auto-import/types'
 
-import * as hooks from './vue-hooks/index'
+import * as hyh from './index'
 
 export const HyhToolkitResolvers = () =>
   <ResolverResultObject>{
     type: 'component',
-    resolve: (name: keyof typeof hooks) => {
-      if (hooks[name]) {
+    resolve: (name: keyof typeof hyh) => {
+      if (hyh[name]) {
         return {
           name,
           as: name,

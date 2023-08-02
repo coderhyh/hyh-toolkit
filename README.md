@@ -9,6 +9,9 @@
   <a href="https://github.com/coderhyh/hyh-toolkit/blob/master/LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/coderhyh/hyh-toolkit" alt="LICENSE">
   </a>
+  <a href="#" target="_blank">
+    <img src="https://img.shields.io/github/languages/top/coderhyh/hyh-toolkit?logo=typescript" alt="languages">
+  </a>
 </p>
 
 # hyh-toolkit
@@ -35,6 +38,12 @@ npm i hyh-toolkit -D
 
 ```ts
 import { useVModel } from 'hyh-toolkit'
+```
+
+### 按需引入
+
+```ts
+import { useVModel } from 'hyh-toolkit/es/vue-hooks/useVModel'
 ```
 
 ### 自动引入

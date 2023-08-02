@@ -1,6 +1,6 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -10,47 +10,43 @@
     "url": "git+https://github.com/coderhyh/hyh-toolkit"
   },
   "bugs": "https://github.com/coderhyh/hyh-toolkit/issues",
-  "keywords": [
-    "tool",
-    "toolkit",
-    "hook",
-    "vitePlugin"
-  ],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./es/index.d.ts",
-      "require": "./lib/index.js",
-      "import": "./es/index.mjs"
-    },
-    "./vite-plugin": {
-      "types": "./es/vite-plugin.d.ts",
-      "require": "./lib/vite-plugin.js",
-      "import": "./es/vite-plugin.mjs"
-    },
-    "./resolvers": {
-      "types": "./es/resolvers.d.ts",
-      "require": "./lib/resolvers.js",
-      "import": "./es/resolvers.mjs"
-    }
-  },
   "main": "./lib/index.js",
+  "types": "./es/index.d.ts",
   "module": "./es/index.js",
-  "types": "./lib/index.d.ts",
-  "unpkg": "dist/index.es.js",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*"
-      ]
-    }
-  },
   "files": [
     "dist",
     "lib",
     "es",
     "LICENSE"
   ],
+  "sideEffects": [
+    "dist/*"
+  ],
+  "keywords": [
+    "tool",
+    "toolkit",
+    "hook",
+    "vitePlugin",
+    "utils",
+    "vue",
+    "vite"
+  ],
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./es": {
+      "types": "./es/vue-hooks.d.ts",
+      "import": "./es/vue-hooks/index.js"
+    },
+    "./lib": {
+      "types": "./lib/vue-hooks/index.d.ts",
+      "require": "./lib/vue-hooks/index.js"
+    },
+    "./*": "./*"
+  },
   "scripts": {
     "build": "npm run clean && vue-tsc --noEmit && vite build",
     "clean": "rimraf dist lib es types",
