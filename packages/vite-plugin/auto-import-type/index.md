@@ -1,3 +1,3 @@
-# pinia-auto-refs
+# auto-import-type
 
-TypeScript 库的起始模板
+auto-import-type

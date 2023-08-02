@@ -1,39 +1,39 @@
 import { defineConfig } from 'vitepress'
-import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 import nav from './nav'
 import sidebar from './sidebar'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: ' ',
-  description: 'tools',
+  description: 'hyh-toolkit 是一个多功能工具库，集成了 Vite Plugin、Vue Hook、实用工具等，为开发提供便利。',
   base: '/hyh-toolkit/',
   lastUpdated: true,
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: './vue-icon.svg',
+      },
+    ],
+    [
+      'meta',
+      {
+        name: 'viewport',
+        content: 'width=device-width,height=device-height, maximum-scale=1.0,minimum-scale=1.0',
+      },
+    ],
+  ],
   themeConfig: {
     logo: '/logo.svg',
-    // https://vitepress.dev/reference/default-theme-config
     nav,
     sidebar,
-    socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-toolkit' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-toolkit' }],
+    search: {
+      provider: 'local'
+    }
   },
   markdown: {
     lineNumbers: true
   },
-  vite: {
-    plugins: [
-      pagefindPlugin({
-        resultOptimization: false,
-        filter(searchItem) {
-          return !searchItem.route.includes('404')
-        },
-        customSearchQuery(input) {
-          return input
-            .replace(/[\u4e00-\u9fa5]/g, ' $& ')
-            .replace(/\s+/g, ' ')
-            .trim()
-        }
-      })
-    ]
-  }
 })

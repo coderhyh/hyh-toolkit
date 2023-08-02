@@ -1,3 +1,3 @@
-# pinia-auto-refs
+# auto-update-pages
 
-TypeScript 库的起始模板
+auto-update-pages
