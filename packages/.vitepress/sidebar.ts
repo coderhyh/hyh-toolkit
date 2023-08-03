@@ -12,9 +12,9 @@ export default <DefaultTheme.Sidebar>[
   {
     text: 'Vite Plugin',
     items: [
-      { text: 'pinia-auto-refs', link: '/vite-plugin/pinia-auto-refs/' },
-      { text: 'auto-import-type', link: '/vite-plugin/auto-import-type/' },
-      { text: 'auto-update-pages', link: '/vite-plugin/auto-update-pages/' }
+      { text: 'pinia-auto-refs', link: '/vite/pinia-auto-refs/' },
+      { text: 'auto-import-type', link: '/vite/auto-import-type/' },
+      { text: 'auto-update-pages', link: '/vite/auto-update-pages/' }
     ]
   }
 ]

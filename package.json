@@ -44,13 +44,13 @@
       "types": "./lib/index.d.ts",
       "require": "./lib/index.js"
     },
-    "./es/vite-plugin": {
-      "types": "./es/vite-plugin.d.ts",
-      "import": "./es/vite-plugin.js"
+    "./es/vite": {
+      "types": "./es/vite.d.ts",
+      "import": "./es/vite.js"
     },
-    "./lib/vite-plugin": {
-      "types": "./lib/vite-plugin.d.ts",
-      "require": "./lib/vite-plugin.js"
+    "./lib/vite": {
+      "types": "./lib/vite.d.ts",
+      "require": "./lib/vite.js"
     },
     "./*": "./*"
   },
