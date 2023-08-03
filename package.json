@@ -1,6 +1,6 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -51,6 +51,14 @@
     "./lib/vite": {
       "types": "./lib/vite.d.ts",
       "require": "./lib/vite.js"
+    },
+    "./es/resolvers": {
+      "types": "./es/resolvers.d.ts",
+      "import": "./es/resolvers.js"
+    },
+    "./lib/resolvers": {
+      "types": "./lib/resolvers.d.ts",
+      "require": "./lib/resolvers.js"
     },
     "./*": "./*"
   },

@@ -23,7 +23,7 @@ hyh-toolkit 是一个多功能工具库，集成了 Vite Plugin、Vue Hook、实
 ## 📦 安装
 
 ```bash
-npm i hyh-toolkit -D
+npm i hyh-toolkit
 ```
 
 ## 🔨 使用
@@ -46,9 +46,9 @@ import { useVModel } from 'hyh-toolkit/es/vue-hooks/useVModel'
 
 #### Vite
 
-```ts {2,8}
+```ts
 import AutoImport from 'unplugin-auto-import/vite'
-import { HyhToolkitResolvers } from 'hyh-toolkit/resolvers'
+import { HyhToolkitResolvers } from 'hyh-toolkit/lib/resolvers'
 
 export default defineConfig({
   plugins: [
@@ -62,17 +62,22 @@ export default defineConfig({
 
 #### Webpack
 
-```js{1,7}
-const { HyhToolkitResolvers } = require('hyh-toolkit/resolvers')
-module.exports = {
-  /* ... */
-  plugins: [
-    require('unplugin-auto-import/webpack')({
-      /* ... */
-      resolvers: [HyhToolkitResolvers()]
-    })
-  ]
-}
+```js
+const { defineConfig } = require('@vue/cli-service')
+const { HyhToolkitResolvers } = require('hyh-toolkit/lib/resolvers')
+const AutoImport = require('unplugin-auto-import/webpack')
+
+module.exports = defineConfig({
+  transpileDependencies: true,
+  configureWebpack: {
+    plugins: [
+      AutoImport({
+        /* ... */
+        resolvers: [HyhToolkitResolvers()]
+      })
+    ]
+  }
+})
 ```
 
 其他支持的工具, 更多请看 [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import#readme)
