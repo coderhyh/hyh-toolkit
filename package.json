@@ -1,6 +1,6 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "tools",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "tool",
     "toolkit",
     "hook",
-    "vitePlugin",
+    "vite plugin",
     "utils",
     "vue",
     "vite"
