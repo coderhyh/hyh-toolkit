@@ -1,23 +1,23 @@
 import { computed } from 'vue'
 export const useVModel = <T extends Readonly<{ [k: string]: any }>, K extends keyof T>(
   props: T,
-  key: K,
+  propName: K,
   emit: (...args: any[]) => void
 ) => {
   return computed({
     get() {
-      if (typeof props[key] === 'object') {
-        return new Proxy(props[key], {
+      if (typeof props[propName] === 'object') {
+        return new Proxy(props[propName], {
           set(obj, name, val) {
-            emit(`update:${String(key)}`, { ...obj, [name]: val })
+            emit(`update:${String(propName)}`, { ...obj, [name]: val })
             return true
           }
         })
       }
-      return props[key]
+      return props[propName]
     },
     set(val) {
-      emit(`update:${String(key)}`, val)
+      emit(`update:${String(propName)}`, val)
     }
   })
 }

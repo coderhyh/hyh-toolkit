@@ -1,4 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import nav from './nav'
 import sidebar from './sidebar'
@@ -34,6 +38,21 @@ export default defineConfig({
     }
   },
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    config(md) {
+      md.use(containerPreview)
+      md.use(componentPreview)
+    }
   },
+  vite: {
+    plugins: [
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
+
+  }
 })

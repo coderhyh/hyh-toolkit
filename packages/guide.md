@@ -28,8 +28,6 @@ npm i hyh-toolkit
 
 ## 🔨 使用
 
-### 引入
-
 ```ts
 import { useVModel } from 'hyh-toolkit'
 ```

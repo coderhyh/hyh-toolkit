@@ -16,7 +16,8 @@
     "resolveJsonModule": true,
     "strict": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "types": ["element-plus/global"]
   },
   "include": ["packages/**/*"],
   // "include": ["packages/**/*.ts", "packages/**/*.d.ts", "packages/**/*.tsx", "packages/**/*.vue"],
