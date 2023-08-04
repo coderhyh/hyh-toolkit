@@ -125,12 +125,12 @@ const _modelValue = useVModel(props, 'propName', emit)
 
 | 参数       | 说明           | 类型                             | 默认值 |
 | ---------- | -------------- | -------------------------------- | ------ |
-| `props`    | 定义的props    | `ReturnType<typeof defineProps>` | 必传   |
+| `props`    | 定义的`props`  | `ReturnType<typeof defineProps>` | 必传   |
 | `propName` | `props`中的key | `keyof props`                    | 必传   |
-| emit       | 定义的emit     | `(...args: any[]) => void`       | 必传   |
+| `emit`     | 定义的`emit`   | `(...args: any[]) => void`       | 必传   |
 
 ## Result
 
-| 参数          | 说明                   | 类型                             |
-| ------------- | ---------------------- | -------------------------------- |
-| `_modelValue` | 处理双向绑定的propName | `ReturnType<typeof defineProps>` |
+| 参数          | 说明                     | 类型                             |
+| ------------- | ------------------------ | -------------------------------- |
+| `_modelValue` | 处理双向绑定的`propName` | `ReturnType<typeof defineProps>` |
