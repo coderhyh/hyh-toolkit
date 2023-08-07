@@ -47,12 +47,13 @@ export default defineConfig({
   vite: {
     plugins: [
       AutoImport({
+        dts: '../auto-imports.d.ts',
         resolvers: [ElementPlusResolver()],
       }),
       Components({
+        dts: '../components.d.ts',
         resolvers: [ElementPlusResolver()],
-      }),
-    ],
-
+      })
+    ]
   }
 })

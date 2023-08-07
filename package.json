@@ -1,6 +1,6 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "这是一个多功能工具库，集成了 Vite Plugin、Vue Hook、实用工具等，为开发提供便利。",
   "author": "coderhyh Fu <coderhyh@gmail.com>",
   "license": "MIT",
@@ -84,14 +84,18 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.1",
     "commitizen": "4.2.4",
     "cz-customizable": "6.3.0",
+    "element-plus": "^2.3.8",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.0",
+    "prettier": "^3.0.1",
     "rimraf": "^5.0.1",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4",
@@ -108,9 +112,6 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@vitepress-demo-preview/component": "^2.3.2",
-    "@vitepress-demo-preview/plugin": "^1.2.1",
-    "chokidar": "^3.5.3",
-    "element-plus": "^2.3.8"
+    "chokidar": "^3.5.3"
   }
 }
