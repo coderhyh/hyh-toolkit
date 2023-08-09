@@ -65,7 +65,7 @@
   "scripts": {
     "build": "npm run clean && vue-tsc --noEmit && vite build",
     "clean": "rimraf dist lib es types",
-    "release": "bump --tag --commit \"release: v%s\" --push",
+    "release": "bumpp",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts packages/ --fix",
@@ -80,12 +80,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@jsdevtools/version-bump-prompt": "^6.1.0",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitepress-demo-preview/component": "^2.3.2",
     "@vitepress-demo-preview/plugin": "^1.2.1",
+    "bumpp": "^9.1.1",
     "commitizen": "4.2.4",
     "cz-customizable": "6.3.0",
     "element-plus": "^2.3.8",

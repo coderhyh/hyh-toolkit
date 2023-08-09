@@ -6,7 +6,7 @@ hero:
   name: 'hyh-toolkit'
   tagline: 一个轻量且实用的工具库
   image:
-    src: /logo.svg
+    src: /ikun.svg
     alt: hyh-toolkit
   actions:
     - theme: brand
@@ -28,3 +28,9 @@ features:
     title: UTILS
     details: 好用的工具函数
 ---
+
+<style>
+  .VPHome .image-container {
+    transform: none !important;
+  }
+</style>
