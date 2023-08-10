@@ -47,6 +47,9 @@ export default defineConfig({
     }
   },
   vite: {
+    ssr: {
+      noExternal: ['element-plus']
+    },
     resolve: { alias: { 'hyh-toolkit': resolve(__dirname, '../') } },
     plugins: [
       AutoImport({
