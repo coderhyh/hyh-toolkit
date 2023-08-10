@@ -17,6 +17,7 @@ module.exports = {
         'improvement', // 用于对当前实现进行改进而没有添加新功能或修复错误的提交
         'merge', // 仅进行分支合并
         'revert', // 回滚到上一个版本
+        'style', // 代码样式修改
         'release' // 变更版本
       ]
     ]

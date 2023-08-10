@@ -1,3 +1,8 @@
+---
+title: paralleTask
+titleTemplate: 并行执行多个任务，并按照它们被触发的顺序返回结果。
+---
+
 # paralleTask
 
 并行执行多个任务，并按照它们被触发的顺序返回结果。
