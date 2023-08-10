@@ -6,5 +6,6 @@
   },
   "eslint.validate": ["typescript", "json", "javascript"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "json.format.enable": false
+  "json.format.enable": false,
+  "Codegeex.Explanation.LanguagePreference": "zh-CN"
 }

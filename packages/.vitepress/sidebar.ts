@@ -10,6 +10,10 @@ export default <DefaultTheme.Sidebar>[
     items: [{ text: 'useVModel', link: '/vue-hooks/useVModel/' }]
   },
   {
+    text: 'Utils',
+    items: [{ text: 'paralleTask', link: '/utils/paralleTask/' }]
+  },
+  {
     text: 'Vite Plugin',
     items: [
       { text: 'pinia-auto-refs', link: '/vite/pinia-auto-refs/' },

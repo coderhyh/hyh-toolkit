@@ -12,16 +12,19 @@
     "module": "CommonJS",
     "esModuleInterop": true, // 允许export=导出，由import from 导入
     "moduleResolution": "node", // 模块解q析策略，ts默认用node的解析策略，即相对的方式导入
-    "lib": ["ESNext"],
     "resolveJsonModule": true,
     "strict": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "types": ["element-plus/global"]
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "types": ["element-plus/global", "vitest/globals", "vite/client"],
+    "baseUrl": "./",
+    "paths": {
+      "hyh-toolkit": ["packages"],
+      "hyh-toolkit/*": ["packages/*"]
+    }
   },
   "include": ["packages/**/*"],
-  // "include": ["packages/**/*.ts", "packages/**/*.d.ts", "packages/**/*.tsx", "packages/**/*.vue"],
-  // "exclude": ["packages/**/__tests__/**", "packages/**/*.spec.ts", "packages/**/*.spec.tsx"],
   "ts-node": {
     "files": true
   }

@@ -18,9 +18,7 @@
     "lib",
     "es"
   ],
-  "sideEffects": [
-    "dist/*"
-  ],
+  "sideEffects": false,
   "keywords": [
     "tool",
     "toolkit",
@@ -99,6 +97,7 @@
     "rimraf": "^5.0.1",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4",
+    "unocss": "^0.55.0",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.1",
     "vite": "^4.4.4",

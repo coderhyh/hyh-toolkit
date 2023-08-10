@@ -3,6 +3,8 @@ import { containerPreview, componentPreview } from '@vitepress-demo-preview/plug
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Unocss from 'unocss/vite'
+import { resolve } from 'path'
 
 import nav from './nav'
 import sidebar from './sidebar'
@@ -35,7 +37,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-toolkit' }],
     search: {
       provider: 'local'
-    }
+    },
   },
   markdown: {
     lineNumbers: true,
@@ -45,6 +47,7 @@ export default defineConfig({
     }
   },
   vite: {
+    resolve: { alias: { 'hyh-toolkit': resolve(__dirname, '../') } },
     plugins: [
       AutoImport({
         dts: '../auto-imports.d.ts',
@@ -53,7 +56,8 @@ export default defineConfig({
       Components({
         dts: '../components.d.ts',
         resolvers: [ElementPlusResolver()],
-      })
+      }),
+      Unocss()
     ]
   }
 })
