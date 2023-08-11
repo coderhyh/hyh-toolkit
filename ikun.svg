@@ -2,7 +2,7 @@
 <def>
   <style> 
     .p {
-      fill: none;
+      fill: rgba(16, 185, 129, 0);
       animation: stroke 12s ease forwards infinite;
       transform-origin: center;
       stroke: #10b981;
@@ -17,6 +17,12 @@
       }
       10% {
         opacity: 1;
+      }
+      30% {
+        fill: rgba(16, 185, 129, 0);
+      }
+      40% {
+        fill: rgba(16, 185, 129, 1);
       }
       50% {
         stroke-dasharray: 350px 0;
