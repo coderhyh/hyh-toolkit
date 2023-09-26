@@ -33,30 +33,30 @@ export const PiniaAutoRefs = (options: Options = {}) => {
       .filter((i) => !excludes.includes(i))
 
     const toHump = (s: string) => s.replace(/[-_]([A-z\d])/g, (_, $1) => $1.toUpperCase())
+    const importT = storeNames.reduce(
+      (str, storeName) =>
+        `${str}import ${toHump(storeName)}Store from '${storeDir.replace('src', pathAlias)}/${storeName}'`,
+      ''
+    )
+    const exportT = storeNames.reduce(
+      (str, storeName, i) =>
+        `${str}  ${toHump(storeName)}: ${toHump(storeName)}Store${i === storeNames.length - 1 ? '' : ','}`,
+      ''
+    )
     const ctx = `import type { ToRef } from 'vue'
 
-${storeNames.reduce(
-  (str, storeName) => `${str}import ${toHump(storeName)}Store from '${storeDir.replace('src', pathAlias)}/${storeName}'
-`,
-  ''
-)}
+${importT}
 type AutoToRefs<T> = {
   [K in keyof T]: T[K] extends Function ? T[K] : ToRef<T[K]>
 }
 
 const storeExports = {
-${storeNames.reduce(
-  (str, storeName, i) => `${str}  ${toHump(storeName)}: ${toHump(storeName)}Store${
-    i === storeNames.length - 1 ? '' : ','
-  }
-`,
-  ''
-)}}
+${exportT}}
 
 export function useStore<T extends keyof typeof storeExports>(storeName: T) {
   const store = storeExports[storeName]()
   const storeRefs = storeToRefs(store)
-  return { ...store, ...storeRefs } as unknown as AutoToRefs<ReturnType<typeof storeExports[T]>>
+  return { ...store, ...storeRefs } as unknown as AutoToRefs<ReturnType<(typeof storeExports)[T]>>
 }
 `
     fs.promises.writeFile(outputFile, ctx, 'utf-8')

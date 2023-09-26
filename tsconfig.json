@@ -9,7 +9,7 @@
     "noUnusedLocals": false, // 检查只声明、未使用的局部变量(只提示不报错)
     "strictNullChecks": true, // 不允许把null、undefined赋值给其他类型的变量
     "strictFunctionTypes": true, // 不允许函数参数双向协变
-    "module": "CommonJS",
+    "module": "ESNext",
     "esModuleInterop": true, // 允许export=导出，由import from 导入
     "moduleResolution": "node", // 模块解q析策略，ts默认用node的解析策略，即相对的方式导入
     "resolveJsonModule": true,
