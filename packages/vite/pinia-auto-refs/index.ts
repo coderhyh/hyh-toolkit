@@ -46,12 +46,14 @@ export const PiniaAutoRefs = (options: Options = {}) => {
     const ctx = `import type { ToRef } from 'vue'
 
 ${importT}
+
 type AutoToRefs<T> = {
   [K in keyof T]: T[K] extends Function ? T[K] : ToRef<T[K]>
 }
 
 const storeExports = {
-${exportT}}
+${exportT}
+}
 
 export function useStore<T extends keyof typeof storeExports>(storeName: T) {
   const store = storeExports[storeName]()
