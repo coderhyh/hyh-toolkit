@@ -1,6 +1,6 @@
 {
   "name": "hyh-toolkit",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "这是一个多功能工具库，集成了 Vite Plugin、Vue Hook、实用工具等，为开发提供便利。",
   "author": "coderhyh <coderhyh@gmail.com>",
   "license": "MIT",
