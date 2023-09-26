@@ -33,16 +33,14 @@ export const PiniaAutoRefs = (options: Options = {}) => {
       .filter((i) => !excludes.includes(i))
 
     const toHump = (s: string) => s.replace(/[-_]([A-z\d])/g, (_, $1) => $1.toUpperCase())
-    const importT = storeNames.reduce(
-      (str, storeName) =>
-        `${str}import ${toHump(storeName)}Store from '${storeDir.replace('src', pathAlias)}/${storeName}'`,
-      ''
-    )
-    const exportT = storeNames.reduce(
-      (str, storeName, i) =>
-        `${str}  ${toHump(storeName)}: ${toHump(storeName)}Store${i === storeNames.length - 1 ? '' : ','}`,
-      ''
-    )
+    const importT = storeNames
+      .map((storeName) => `import ${toHump(storeName)}Store from '${storeDir.replace('src', pathAlias)}/${storeName}'`)
+      .join('\n')
+    const exportT = storeNames
+      .map(
+        (storeName, i) => `  ${toHump(storeName)}: ${toHump(storeName)}Store${i === storeNames.length - 1 ? '' : ','}`
+      )
+      .join('\n')
     const ctx = `import type { ToRef } from 'vue'
 
 ${importT}
