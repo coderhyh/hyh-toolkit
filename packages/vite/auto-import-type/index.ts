@@ -52,6 +52,7 @@ export const AutoImportType = (options: Options = {}) => {
   return {
     name: 'auto-import-types',
     configResolved(config: ResolvedConfig) {
+      if (config.env.PROD) return
       generateConfigFiles()
       setupWatcher(chokidar.watch(defaultOptions.dtsDir))
     }

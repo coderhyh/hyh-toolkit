@@ -72,6 +72,7 @@ export function useStore<T extends keyof typeof storeExports>(storeName: T) {
   return {
     name: 'pinia-auto-refs',
     configResolved(config: ResolvedConfig) {
+      if (config.env.PROD) return
       generateConfigFiles()
       setupWatcher(chokidar.watch(defaultOptions.storeDir!))
     }
