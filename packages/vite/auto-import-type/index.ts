@@ -1,6 +1,6 @@
-import chokidar from 'chokidar'
 import fs from 'fs'
 import path from 'path'
+import chokidar from 'chokidar'
 import type { ResolvedConfig } from 'vite'
 
 type ESLintGlobalsPropValue = boolean | 'readonly' | 'readable' | 'writable' | 'writeable'
@@ -18,10 +18,10 @@ type Options = Partial<{
 const defaultOptions = {
   dtsDir: 'src/types',
   filepath: '.eslintrc-auto-import-types.json',
-  globalsPropValue: true
+  globalsPropValue: true,
 }
 
-export const AutoImportType = (options: Options = {}) => {
+export function AutoImportType(options: Options = {}) {
   options = { ...defaultOptions, ...options }
 
   const { dtsDir, filepath, globalsPropValue } = options as Required<Options>
@@ -55,6 +55,6 @@ export const AutoImportType = (options: Options = {}) => {
     configResolved(config: ResolvedConfig) {
       generateConfigFiles()
       setupWatcher(chokidar.watch(defaultOptions.dtsDir))
-    }
+    },
   }
 }

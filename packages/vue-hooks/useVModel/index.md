@@ -16,24 +16,24 @@ titleTemplate: 实现多重嵌套组件数据的双向绑定
 ::: code-group
 
 ```vue [parent.vue]
-<template>
-  <son v-model="value" />
-</template>
-
 <script setup lang="ts">
 const value = ref('11')
 </script>
+
+<template>
+  <son v-model="value" />
+</template>
 ```
 
 ```vue [son.vue]
-<template>
-  <input :value="modelValue" @input="emit('update:modelValue', $event.target.value)" />
-</template>
-
 <script setup lang="ts">
 defineProps<{ modelValue: string }>()
 const emit = defineEmits<{ (e: 'update:modelValue', value: string): void }>()
 </script>
+
+<template>
+  <input :value="modelValue" @input="emit('update:modelValue', $event.target.value)">
+</template>
 ```
 
 :::
@@ -45,20 +45,16 @@ const emit = defineEmits<{ (e: 'update:modelValue', value: string): void }>()
 ::: code-group
 
 ```vue [parent.vue]
-<template>
-  <son v-model="value" />
-</template>
-
 <script setup lang="ts">
 const value = ref('11')
 </script>
+
+<template>
+  <son v-model="value" />
+</template>
 ```
 
 ```vue [son.vue]
-<template>
-  <input v-model="_modelValue" />
-</template>
-
 <script setup lang="ts">
 import { useVModel } from 'hyh-toolkit'
 const props = defineProps<{ modelValue: string }>()
@@ -66,6 +62,10 @@ const emit = defineEmits<{ (e: 'update:modelValue', value: string): void }>()
 
 const _modelValue = useVModel(props, 'modelValue', emit)
 </script>
+
+<template>
+  <input v-model="_modelValue">
+</template>
 ```
 
 :::
@@ -76,10 +76,6 @@ const _modelValue = useVModel(props, 'modelValue', emit)
 ::: code-group
 
 ```vue [parent.vue]
-<template>
-  <son v-model="formData" />
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 import son from './son.vue'
@@ -90,15 +86,13 @@ const formData = ref<IFormData>({
   sex: '男'
 })
 </script>
+
+<template>
+  <son v-model="formData" />
+</template>
 ```
 
 ```vue [son.vue]
-<template>
-  <label> 姓名: <input v-model="_modelValue.name" /> </label>
-  <label> 年龄: <input v-model="_modelValue.age" /> </label>
-  <label> 性别: <input v-model="_modelValue.sex" /> </label>
-</template>
-
 <script setup lang="ts">
 import { useVModel } from 'hyh-toolkit'
 import type { IFormData } from './type'
@@ -108,6 +102,12 @@ const emit = defineEmits<{ (e: 'update:modelValue', value: IFormData): void }>()
 
 const _modelValue = useVModel(props, 'modelValue', emit)
 </script>
+
+<template>
+  <label> 姓名: <input v-model="_modelValue.name"> </label>
+  <label> 年龄: <input v-model="_modelValue.age"> </label>
+  <label> 性别: <input v-model="_modelValue.sex"> </label>
+</template>
 ```
 
 ```ts [type.d.ts]

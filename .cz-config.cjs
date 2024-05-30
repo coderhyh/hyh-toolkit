@@ -13,11 +13,11 @@ module.exports = {
     { value: 'chore', name: 'chore: 改变构建流程、或者增加依赖库、工具等' },
     {
       value: 'improvement',
-      name: 'improvement: 用于对当前实现进行改进而没有添加新功能或修复错误的提交'
+      name: 'improvement: 用于对当前实现进行改进而没有添加新功能或修复错误的提交',
     },
     { value: 'merge', name: 'merge: 仅进行分支合并' },
     { value: 'revert', name: 'revert: 回滚到上一个版本' },
-    { value: 'release', name: 'version: 变更版本' }
+    { value: 'release', name: 'release: 变更版本' },
   ],
   scopes: [],
   allowTicketNumber: false,
@@ -34,7 +34,7 @@ module.exports = {
     body: '长说明，使用"|"换行(可选): \n',
     breaking: '非兼容性说明 (可选):\n',
     footer: '关联关闭的issue, 例如: #31, #34(可选):\n',
-    confirmCommit: '确定提交说明?'
+    confirmCommit: '确定提交说明?',
   },
   // 是否允许自定义填写 scope，在 scope 选择的时候，会有 empty 和 custom 可以选择。
   allowCustomScopes: false,
@@ -43,5 +43,5 @@ module.exports = {
   // 跳过
   // skipQuestions: ['customScope', 'body', 'breaking', 'footer'],
   // limit subject length
-  subjectLimit: 100
+  subjectLimit: 100,
 }

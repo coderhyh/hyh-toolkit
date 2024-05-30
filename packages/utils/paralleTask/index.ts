@@ -8,11 +8,12 @@
 export function paralleTask<T = any>(
   tasks: (() => Promise<T>)[],
   cb?: (result: PromiseSettledResult<T>) => void,
-  paralleCount = 3
+  paralleCount = 3,
 ): Promise<PromiseSettledResult<T>[]> {
   return new Promise((resolve) => {
     const tasksLength = tasks.length
-    if (!tasksLength) return resolve([])
+    if (!tasksLength)
+      return resolve([])
     const result: PromiseSettledResult<T>[] = []
     let nextIndex = 0
     let finishCount = 0
@@ -28,8 +29,10 @@ export function paralleTask<T = any>(
         .finally(() => {
           cb?.(result.at(-1)!)
           finishCount++
-          if (nextIndex < tasksLength) _run()
-          else if (finishCount === tasksLength) resolve(result)
+          if (nextIndex < tasksLength)
+            _run()
+          else if (finishCount === tasksLength)
+            resolve(result)
         })
     }
 

@@ -1,28 +1,28 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "removeComments": true, // 删除注释
-    "alwaysStrict": true, // 在代码中注入'use strict'
-    "noImplicitAny": true, // 不允许隐式的any类型
-    "noImplicitThis": true, // 不允许this有隐式的any类型
-    "sourceMap": false, // 生成目标文件的sourceMap文件
-    "noUnusedLocals": false, // 检查只声明、未使用的局部变量(只提示不报错)
-    "strictNullChecks": true, // 不允许把null、undefined赋值给其他类型的变量
-    "strictFunctionTypes": true, // 不允许函数参数双向协变
-    "module": "ESNext",
-    "esModuleInterop": true, // 允许export=导出，由import from 导入
-    "moduleResolution": "node", // 模块解q析策略，ts默认用node的解析策略，即相对的方式导入
-    "resolveJsonModule": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-    "types": ["element-plus/global", "vitest/globals", "vite/client"],
-    "baseUrl": "./",
+    "baseUrl": "./", // 不允许函数参数双向协变
+    "module": "ESNext", // 允许export=导出，由import from 导入
+    "moduleResolution": "node",
     "paths": {
       "hyh-toolkit": ["packages"],
       "hyh-toolkit/*": ["packages/*"]
-    }
+    }, // 模块解q析策略，ts默认用node的解析策略，即相对的方式导入
+    "resolveJsonModule": true,
+    "types": ["element-plus/global", "vitest/globals", "vite/client"],
+    "strict": true, // 不允许把null、undefined赋值给其他类型的变量
+    "strictFunctionTypes": true, // 检查只声明、未使用的局部变量(只提示不报错)
+    "strictNullChecks": true, // 删除注释
+    "alwaysStrict": true, // 在代码中注入'use strict'
+    "noImplicitAny": true, // 不允许隐式的any类型
+    "noImplicitThis": true, // 生成目标文件的sourceMap文件
+    "noUnusedLocals": false,
+    "removeComments": true, // 不允许this有隐式的any类型
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
   "include": ["packages/**/*"],
   "ts-node": {

@@ -1,4 +1,5 @@
-import { defineConfig, presetAttributify, presetUno, Rule } from 'unocss'
+import type { Rule } from 'unocss'
+import { defineConfig, presetAttributify, presetUno } from 'unocss'
 // https://github.com/unocss/unocss
 
 const sizeMapping: Record<string, string> = {
@@ -15,7 +16,7 @@ const sizeMapping: Record<string, string> = {
   pb: 'padding-bottom',
   pl: 'padding-left',
   fs: 'font-size',
-  br: 'border-radius'
+  br: 'border-radius',
 }
 
 function getSizeRules(Mapping: Record<string, string>): Rule<{}>[] {
@@ -25,15 +26,15 @@ function getSizeRules(Mapping: Record<string, string>): Rule<{}>[] {
   })
 }
 
-export const createConfig = () => {
+export function createConfig() {
   return defineConfig({
     presets: [presetUno(), presetAttributify()],
     content: {
       pipeline: {
-        include: [/\.vue$/]
-      }
+        include: [/\.vue$/],
+      },
     },
-    rules: getSizeRules(sizeMapping)
+    rules: getSizeRules(sizeMapping),
   })
 }
 

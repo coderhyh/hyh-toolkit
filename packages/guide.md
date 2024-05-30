@@ -1,6 +1,6 @@
 ---
 title: hyh-toolkit入手指南
-titleTemplate: hyh-toolkit 是一个多功能工具库，集成了 Vite Plugin、Vue Hook、实用工具等，为开发提供便利。
+titleTemplate: hyh-toolkit 是一个多功能工具库，集成了Vite Plugin、Vue Hook、Utils，为开发提供便利。
 ---
 
 <div style="display: flex">
@@ -10,7 +10,7 @@ titleTemplate: hyh-toolkit 是一个多功能工具库，集成了 Vite Plugin�
   </a>
 </div>
 
-hyh-toolkit 是一个多功能工具库，集成了 Vite Plugin、Vue Hook、实用工具等，为开发提供便利。
+hyh-toolkit 是一个多功能工具库，集成了Vite Plugin、Vue Hook、Utils，为开发提供便利。
 
 ## ✨ 特性
 

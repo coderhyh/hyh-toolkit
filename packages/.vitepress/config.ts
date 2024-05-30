@@ -1,10 +1,10 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vitepress'
-import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
+import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
-import { resolve } from 'path'
 
 import nav from './nav'
 import sidebar from './sidebar'
@@ -36,7 +36,7 @@ export default defineConfig({
     sidebar,
     socialLinks: [{ icon: 'github', link: 'https://github.com/coderhyh/hyh-toolkit' }],
     search: {
-      provider: 'local'
+      provider: 'local',
     },
   },
   markdown: {
@@ -44,11 +44,11 @@ export default defineConfig({
     config(md) {
       md.use(containerPreview)
       md.use(componentPreview)
-    }
+    },
   },
   vite: {
     ssr: {
-      noExternal: ['element-plus']
+      noExternal: ['element-plus'],
     },
     resolve: { alias: { 'hyh-toolkit': resolve(__dirname, '../') } },
     plugins: [
@@ -60,7 +60,7 @@ export default defineConfig({
         dts: '../components.d.ts',
         resolvers: [ElementPlusResolver()],
       }),
-      Unocss()
-    ]
-  }
+      Unocss(),
+    ],
+  },
 })
